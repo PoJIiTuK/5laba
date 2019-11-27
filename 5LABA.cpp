@@ -12,13 +12,13 @@ class Matrix
 private:
 	double M[m];
 public:
-	friend void InputArray(Matrix Arr[]);
-	friend void OutputArray(Matrix Arr[]);
-	friend void SortArray(Matrix  Arr[]);
-	void CalcArray(Matrix Arr[]);
+	friend void inputArray(Matrix Arr[]);
+	friend void outputArray(Matrix Arr[]);
+	friend void sortArray(Matrix  Arr[]);
+	void calcArray(Matrix Arr[]);
 };
 
-void InputArray(Matrix  Arr[])
+void inputArray(Matrix  Arr[])
 {
 	for (int i = 0; i < n; ++i)
 		for (int j = 0; j < m; ++j)
@@ -26,7 +26,7 @@ void InputArray(Matrix  Arr[])
 			cin >> Arr[i].M[j];
 		}
 }
-void OutputArray(Matrix  Arr[])
+void outputArray(Matrix  Arr[])
 {
 	for (int i = 0; i < n; ++i)
 	{
@@ -37,7 +37,7 @@ void OutputArray(Matrix  Arr[])
 		cout << endl;
 	}
 }
-void SortArray(Matrix  arr[])
+void sortArray(Matrix  arr[])
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -45,42 +45,42 @@ void SortArray(Matrix  arr[])
 		{
 			for (int q = 0; q < n - a; q += 2 * a)
 			{
-				int p = 0;
-				int o = 0;
+				int first_variable = 0;
+				int second_variable = 0;
 				int sum = 0;
-				int e = q;
-				int z = q + a;
-				int c = q + 2 * a;
-				c = (c < n) ? c : n;
-				int* Block = new int[c - e];
+				int varieble1 = varieble2;;
+				int sum1 = varieble3 + a;
+				int  sort= varieble3 + 2 * a;
+			         sort = (sort < n) ? sort : n;
+				int* Block = new int[sort - e];
 
-				while (e + p < z && z + o < c)
+				while (varieble1 + first_variable < sum1 && sum1 +second_variable < sort)
 				{
-					if (arr[e + p].M[i] < arr[z + o].M[i])
+					if (arr[varieble1 + first_variable].M[i] < arr[sum1 + second_variable].M[i])
 					{
-						Block[p + o] = arr[e + p].M[i];
-						p++;
+						Block[first_variable + second_variable] = arr[varieble1 + first_variable].M[i];
+						first_vatieble++;
 					}
 					else
 					{
-						Block[p + o] = arr[z + o].M[i];
-						o++;
+						Block[first_variable + second_variable] = arr[sum1 + second_variable].M[i];
+						second_variable++;
 					}
 				}
-				while (e + p < z)
+				while (varieble1 + first variable < sum1)
 				{
-					Block[p + o] = arr[e + p].M[i];
-					p++;
+					Block[first_variable + second_variable] = arr[varieble1 + first_variable].M[i];
+					first_variable++;
 				}
-				while (z + o < c)
+				while (sum1 + second_variable < sort)
 				{
-					Block[p + o] = arr[z + o].M[i];
+					Block[first_variable + second_variable] = arr[sum1 + second_variable].M[i];
 					o++;
 				}
 
-				for (int w = 0; w < p + o; w++)
+				for (int sort1 = 0; sort1 < first_variable + second_variable; sort1++)
 				{
-					arr[e + w].M[i] = Block[w];
+					arr[varieble1 + sort1].M[i] = Block[sort1];
 				}
 				delete Block;
 
